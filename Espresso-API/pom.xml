@@ -2,16 +2,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.spigotmc</groupId>
-        <artifactId>spigot-parent</artifactId>
-        <version>dev-SNAPSHOT</version>
+        <groupId>cam.fourtey</groupId>
+        <artifactId>espresso-15-parent</artifactId>
+        <version>1.5.2-1.0.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <groupId>org.spigotmc</groupId>
-    <artifactId>spigot-api</artifactId>
-    <version>1.5.2-R1.1-SNAPSHOT</version>
-    <name>Spigot-API</name>
+    <groupId>cam.fourtey</groupId>
+    <artifactId>Espresso-API</artifactId>
+    <version>1.5.2-1.0.0</version>
+    <name>Espresso-API ${version}</name>
     <url>http://www.spigotmc.org</url>
 
     <properties>

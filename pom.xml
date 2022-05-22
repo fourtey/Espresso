@@ -9,18 +9,18 @@
         <version>7</version>
     </parent>
 
-    <groupId>org.spigotmc</groupId>
-    <artifactId>spigot-parent</artifactId>
-    <version>dev-SNAPSHOT</version>
+    <groupId>cam.fourtey</groupId>
+    <artifactId>espresso-15-parent</artifactId>
+    <version>1.5.2-1.0.0</version>
     <packaging>pom</packaging>
 
-    <name>Spigot-Parent</name>
-    <description>Parent project for all Spigot modules.</description>
-    <url>https://github.com/EcoCityCraft/Spigot</url>
+    <name>Espresso-Parent ${version}</name>
+    <description>Parent project for all Espresso 1.5 modules.</description>
+    <url>https://github.com/fourtey/Espresso/</url>
 
     <modules>
-        <module>Spigot-Server</module>
-        <module>Spigot-API</module>
+        <module>Espresso-Server-15</module>
+        <module>Espresso-API</module>
     </modules>
 
     <properties>

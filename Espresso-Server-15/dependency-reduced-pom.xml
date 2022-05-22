@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <parent>
-    <artifactId>spigot-parent</artifactId>
-    <groupId>org.spigotmc</groupId>
+    <artifactId>espresso-15-parent</artifactId>
+    <groupId>cam.fourtey</groupId>
     <version>dev-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.spigotmc</groupId>
-  <artifactId>spigot</artifactId>
-  <name>Spigot</name>
-  <version>1.5.2-R1.1-SNAPSHOT</version>
+  <groupId>cam.fourtey</groupId>
+  <artifactId>Espresso-Server-15</artifactId>
+  <name>Espresso</name>
+  <version>1.5.2-1.0.0</version>
   <url>http://www.spigotmc.org</url>
   <build>
     <defaultGoal>install</defaultGoal>
