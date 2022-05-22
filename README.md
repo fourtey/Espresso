@@ -14,4 +14,4 @@ We use maven to handle our dependencies.
     * *Note*: this is not needed as the repository we use has Bukkit too, but you might have a newer one (with your own changes :D)
 * Check out this repo and: `mvn clean package`
 
-    * *Note*:I have removed specialsource, or overmapped depending on the version, and as a result this will not work with the legacy bukkit-api methods, only the latest ones
+    * *Note*: I have removed specialsource, or overmapped depending on the version, and as a result this will not work with the legacy bukkit-api methods, only the latest ones
