@@ -51,6 +51,8 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.messaging.Messenger;
 import org.bukkit.plugin.messaging.StandardMessenger;
 import org.bukkit.scoreboard.Scoreboard;
+import org.bukkit.event.player.PlayerVelocityEvent;
+import org.bukkit.util.Vector;
 
 @DelegateDeserialization(CraftOfflinePlayer.class)
 public class CraftPlayer extends CraftHumanEntity implements Player {
@@ -155,6 +157,35 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
         return getHandle().listName;
     }
 
+    // Espresso Start
+    @Override
+    public void setVelocity(Vector vel) {
+        // To be consistent with old behavior, set the velocity before firing the event
+        this.setVelocityDirect(vel);
+
+        PlayerVelocityEvent event = new PlayerVelocityEvent(this, vel.clone());
+        this.getServer().getPluginManager().callEvent(event);
+
+        if(!event.isCancelled()) {
+            // Set the velocity again in case it was changed by event handlers
+            this.setVelocityDirect(event.getVelocity());
+
+            // Send the new velocity to the player's client immediately, so it isn't affected by
+            // any movement packets from this player that may be processed before the end of the tick.
+            // Without this, player velocity changes tend to be very inconsistent.
+            this.getHandle().playerConnection.sendPacket(new Packet28EntityVelocity(this.getHandle())); // PacketPlayOutEntityVelocity (1.7+)
+        }
+
+        // Note that cancelling the event does not restore the old velocity, it only prevents
+        // the packet from sending. Again, this is to be consistent with old behavior.
+    }
+
+    public void setVelocityDirect(Vector vel) {
+        entity.motX = vel.getX();
+        entity.motY = vel.getY();
+        entity.motZ = vel.getZ();
+    }
+    // Espresso End
     public void setPlayerListName(String name) {
         String oldName = getHandle().listName;
 
